@@ -1,11 +1,11 @@
-package ui
+package Runnable
 
 import org.uqbar.arena.Application
 
 class ToDoListApplication extends Application {
 
 	override createMainWindow() {
-		new PantallaPrincipalToDoList(this)
+		new ui.PantallaPrincipalToDoList(this)
 	}
 
 	def static main(String[] args) {

@@ -11,6 +11,7 @@ class TareaAppModel {
 	List<Tarea> resultadosTareas = newArrayList
 	Tarea tareaSeleccionada
 	Tarea exampleTarea = new Tarea
+	String descripcionEditable
 
 	new() {
 		val tarea1 = new Tarea("Entrega 1 Algo 3")
@@ -18,7 +19,6 @@ class TareaAppModel {
 		val tarea3 = new Tarea("Estudiar para DB")
 		tarea1.cambiarEstado
 		tarea3.cambiarEstado
-		
 
 		resultadosTareas.add(tarea1)
 		resultadosTareas.add(tarea2)
@@ -27,6 +27,10 @@ class TareaAppModel {
 
 	def agregarTarea(Tarea tarea) {
 		resultadosTareas.add(tarea)
+	}
+
+	def editarDescripcion() {
+		tareaSeleccionada.descripcion = descripcionEditable
 	}
 
 }

@@ -9,7 +9,6 @@ class Tarea {
 
 	String descripcion = ""
 	Boolean hecho = false
-	String descripcionEditable
 
 	new(String descripcion) {
 		this.descripcion = descripcion
@@ -22,7 +21,4 @@ class Tarea {
 		hecho = !hecho
 	}
 
-	def editarDescripcion() {
-		descripcion = descripcionEditable
-	}
 }

@@ -40,7 +40,7 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 		]
 
 		new TextBox(panel) => [
-			value <=> "tareaSeleccionada.descripcionEditable"
+			value <=> "descripcionEditable"
 		]
 
 		new Button(panel) => [
@@ -95,7 +95,7 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 	}
 
 	def editarTarea() {
-		modelObject.tareaSeleccionada.editarDescripcion
+		modelObject.editarDescripcion
 	}
 
 	def editarTarea2() {
