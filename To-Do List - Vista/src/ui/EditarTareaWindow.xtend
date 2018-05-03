@@ -1,3 +1,5 @@
+package ui
+
 import org.uqbar.arena.aop.windows.TransactionalDialog
 import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.widgets.Button
@@ -7,6 +9,8 @@ import org.uqbar.arena.widgets.TextBox
 import org.uqbar.arena.windows.WindowOwner
 
 import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
+import Modelo.TareaAppModel
+import Dominio.Tarea
 
 class EditarTareaWindow extends TransactionalDialog<TareaAppModel> {
 

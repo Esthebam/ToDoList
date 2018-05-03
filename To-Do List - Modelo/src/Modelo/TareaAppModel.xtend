@@ -1,6 +1,9 @@
+package Modelo
+
 import java.util.List
 import org.uqbar.commons.model.annotations.TransactionalAndObservable
 import org.eclipse.xtend.lib.annotations.Accessors
+import Dominio.Tarea
 
 @Accessors
 @TransactionalAndObservable

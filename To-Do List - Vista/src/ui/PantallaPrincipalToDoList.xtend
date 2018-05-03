@@ -1,3 +1,5 @@
+package ui
+
 import org.uqbar.arena.bindings.NotNullObservable
 import org.uqbar.arena.layout.ColumnLayout
 import org.uqbar.arena.layout.HorizontalLayout
@@ -10,6 +12,8 @@ import org.uqbar.arena.windows.SimpleWindow
 import org.uqbar.arena.windows.WindowOwner
 
 import static extension org.uqbar.arena.xtend.ArenaXtendExtensions.*
+import Modelo.TareaAppModel
+import Dominio.Tarea
 
 class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 
@@ -18,9 +22,9 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 	}
 
 	override protected createFormPanel(Panel mainPanel) {
-		
+
 		val elementSelected = new NotNullObservable("tareaSeleccionada")
-		
+
 		title = "TODO List"
 		val panel = new Panel(mainPanel)
 		panel.layout = new ColumnLayout(2)
@@ -65,7 +69,7 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 			]
 			fixedSize = 120
 		]
-		
+
 		val panel2 = new Panel(mainPanel) => [
 			layout = new HorizontalLayout
 		]
@@ -73,14 +77,13 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 		new Button(panel2) => [
 			caption = "Hacer/Deshacer"
 			onClick[modelObject.tareaSeleccionada.cambiarEstado]
-			bindEnabled(elementSelected)		
+			bindEnabled(elementSelected)
 		]
 		new Button(panel2) => [
 			caption = "Editar"
 			onClick[this.editarTarea2]
 			bindEnabled(elementSelected)
 		]
-		
 
 	}
 
@@ -94,7 +97,7 @@ class PantallaPrincipalToDoList extends SimpleWindow<TareaAppModel> {
 	def editarTarea() {
 		modelObject.tareaSeleccionada.editarDescripcion
 	}
-	
+
 	def editarTarea2() {
 		val tarea = modelObject.tareaSeleccionada
 		new EditarTareaWindow(this, tarea) => [

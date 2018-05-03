@@ -1,3 +1,5 @@
+package ui
+
 import org.uqbar.arena.Application
 
 class ToDoListApplication extends Application {
